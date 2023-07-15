@@ -1,11 +1,11 @@
 #ifndef __$__stringutils__
 #define __$__stringutils__ 1234
-#include<iostream>
+#include <iostream>
 using namespace std;
 namespace stringutils
 {
-string trimmed(const string &);
-int compareStringIgnoreCase(const char *, const char *);
+    string trimmed(const string &);
+    int compareStringIgnoreCase(const char *, const char *);
 }
 
 #endif

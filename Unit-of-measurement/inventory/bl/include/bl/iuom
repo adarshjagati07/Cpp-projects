@@ -1,31 +1,29 @@
-#ifndef __$__iuom__bl
-#define __$__iuom__bl 1234
-#include<iostream>
+#ifndef __$__IUOM__bl
+#define __$__IUOM__bl
+#include <iostream>
 using namespace std;
-
 namespace inventory
 {
-namespace business_layer
-{
-namespace abc
-{
-class IUnitOfMeasurement
-{
-public:
-virtual void setCode(int code)=0;
-virtual int getCode() const=0;
-virtual void setTitle(string title)=0;
-virtual string getTitle() const=0;
-
-virtual IUnitOfMeasurement & operator=(const IUnitOfMeasurement &other)=0;
-virtual int operator==(const IUnitOfMeasurement &other)=0;
-virtual int operator!=(const IUnitOfMeasurement &other)=0;
-virtual int operator>(const IUnitOfMeasurement &other)=0;
-virtual int operator>=(const IUnitOfMeasurement &other)=0;
-virtual int operator<(const IUnitOfMeasurement &other)=0;
-virtual int operator<=(const IUnitOfMeasurement &other)=0;
-};
-}
-}
+    namespace business_layer
+    {
+        namespace abc
+        {
+            class IUnitOfMeasurement
+            {
+            public:
+                virtual void setCode(int code) = 0;
+                virtual int getCode() const = 0;
+                virtual void setTitle(string title) = 0;
+                virtual string getTitle() const = 0;
+                virtual IUnitOfMeasurement &operator=(const IUnitOfMeasurement &other) = 0;
+                virtual int operator==(const IUnitOfMeasurement &other) = 0;
+                virtual int operator!=(const IUnitOfMeasurement &other) = 0;
+                virtual int operator<(const IUnitOfMeasurement &other) = 0;
+                virtual int operator>(const IUnitOfMeasurement &other) = 0;
+                virtual int operator<=(const IUnitOfMeasurement &other) = 0;
+                virtual int operator>=(const IUnitOfMeasurement &other) = 0;
+            };
+        }
+    }
 }
 #endif

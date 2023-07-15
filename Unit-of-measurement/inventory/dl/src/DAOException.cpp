@@ -1,30 +1,29 @@
-#include<dl/daoexception>
+#include <dl/daoexception>
 using namespace inventory;
 using namespace data_layer;
 
 DAOException::DAOException()
 {
-this->message="";
+    this->message = "";
 }
 DAOException::DAOException(string message)
 {
-this->message=message;
+    this->message = message;
 }
 DAOException::DAOException(const DAOException &other)
 {
-this->message=other.message;
+    this->message = other.message;
 }
-DAOException:: ~DAOException() throw()
+DAOException::~DAOException() throw()
 {
-//do nothing right now
+    // do nothing right now
 }
-DAOException & DAOException::operator=(const DAOException &other)
+DAOException &DAOException::operator=(const DAOException &other)
 {
-this->message=other.message;
-return *this;
+    this->message = other.message;
+    return *this;
 }
-const char * DAOException::what() const throw()
+const char *DAOException::what() const throw()
 {
-return this->message.c_str();
+    return this->message.c_str();
 }
-

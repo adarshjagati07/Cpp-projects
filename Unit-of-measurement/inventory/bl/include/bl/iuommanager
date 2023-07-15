@@ -1,33 +1,33 @@
-#ifndef __$__iuommanager__bl
-#define __$__iuommanager__bl 1234
-#include<iostream>
-#include<bl/iuom>
-#include<bl/uom>
-#include<bl/blexception>
-#include<forward_list>
+#ifndef __$__IUOMMANAGER__bl
+#define __$__IUOMMANAGER__bl
+#include <iostream>
+#include <bl/iuom>
+#include <bl/uom>
+#include <bl/blexception>
+#include <forward_list>
+using namespace std;
 namespace inventory
 {
-namespace business_layer
-{
-namespace abc
-{
-class IUnitOfMeasurementManager
-{
-public:
-virtual void addUnitOfMeasurement(abc::IUnitOfMeasurement *unitOfMeasurement)=0;
-virtual void updateUnitOfMeasurement(abc::IUnitOfMeasurement *unitOfMeasurement)=0;
-virtual void removeUnitOfMeasurementByCode(int code)=0;
-virtual void removeUnitOfMeasurementByTitle(string &title)=0;
-virtual abc::IUnitOfMeasurement * getUnitOfMeasurementByCode(int code)=0;
-virtual abc::IUnitOfMeasurement * getUnitOfMeasurementByTitle(string &title)=0;
-virtual forward_list<abc::IUnitOfMeasurement *> getUnitOfMeasurements()=0;
-virtual int unitOfMeasurementCodeExists(int code)=0;
-virtual int unitOfMeasurementTitleExists(string &title)=0;
-virtual int getUnitOfMeasurementCount()=0;
-};
-
-}
-}
+    namespace business_layer
+    {
+        namespace abc
+        {
+            class IUnitOfMeasurementManager
+            {
+            public:
+                virtual void addUnitOfMeasurement(abc::IUnitOfMeasurement *unitOfMeasurement) = 0;
+                virtual void updateUnitOfMeasurement(abc::IUnitOfMeasurement *unitOfMeasurement) = 0;
+                virtual void removeUnitOfMeasurementByCode(int code) = 0;
+                virtual void removeUnitOfMeasurementByTitle(string &title) = 0; //&title : we will create alias
+                virtual IUnitOfMeasurement *getUnitOfMeasurementByCode(int code) = 0;
+                virtual IUnitOfMeasurement *getUnitOfMeasurementByTitle(string &title) = 0;
+                virtual forward_list<IUnitOfMeasurement *> *getUnitOfMeasurements() = 0;
+                virtual int unitOfMeasurementCodeExists(int code) = 0;
+                virtual string unitOfMeasurementTitleExists(string &title) = 0;
+                virtual int getUnitOfMeasurementCount() = 0;
+            };
+        }
+    }
 }
 
 #endif

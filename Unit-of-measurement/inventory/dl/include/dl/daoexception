@@ -1,22 +1,23 @@
 #ifndef __$__daoexception__
 #define __$__daoexception__ 1234
-#include<iostream>
+#include <iostream>
 using namespace std;
 namespace inventory
 {
-namespace data_layer
-{
-class DAOException:public exception
-{
-string message;
-public:
-DAOException();
-DAOException(string message);
-DAOException(const DAOException &other);
-DAOException & operator=(const DAOException &other);
-virtual ~DAOException() throw();
-const char * what() const throw();
-};
-}
+    namespace data_layer
+    {
+        class DAOException : public exception
+        {
+            string message;
+
+        public:
+            DAOException();
+            DAOException(string message);
+            DAOException(const DAOException &other);
+            DAOException &operator=(const DAOException &other);
+            virtual ~DAOException() throw();
+            const char *what() const throw();
+        };
+    }
 }
 #endif

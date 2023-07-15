@@ -1,36 +1,35 @@
-#ifndef __$__uom__bl
-#define __$__uom__bl 1234
-#include<iostream>
-#include<bl/iuom>
+#ifndef __$__UOM__bl
+#define __$__UOM__bl
+#include <iostream>
+#include <bl/iuom>
 using namespace std;
 namespace inventory
 {
-namespace business_layer
-{
-class UnitOfMeasurement:public abc::IUnitOfMeasurement
-{
-private:
-int code;
-string title;
-public:
-UnitOfMeasurement();
-UnitOfMeasurement(int code,string title);
-UnitOfMeasurement(const UnitOfMeasurement &other);
-virtual ~UnitOfMeasurement();
+    namespace business_layer
+    {
+        class UnitOfMeasurement : public abc::IUnitOfMeasurement
+        {
+        private:
+            int code;
+            string title;
 
-void setCode(int code);
-int getCode() const;
-void setTitle(string title);
-string getTitle() const;
-
-IUnitOfMeasurement & operator=(const IUnitOfMeasurement &other);
-int operator==(const IUnitOfMeasurement &other);
-int operator!=(const IUnitOfMeasurement &other);
-int operator>(const IUnitOfMeasurement &other);
-int operator>=(const IUnitOfMeasurement &other);
-int operator<(const IUnitOfMeasurement &other);
-int operator<=(const IUnitOfMeasurement &other);
-};
-}
+        public:
+            UnitOfMeasurement();
+            UnitOfMeasurement(int code, string title);
+            UnitOfMeasurement(const UnitOfMeasurement &other);
+            virtual ~UnitOfMeasurement();
+            void setCode(int code);
+            int getCode() const;
+            void setTitle(string title);
+            string getTitle() const;
+            abc::IUnitOfMeasurement &operator=(const abc::IUnitOfMeasurement &other);
+            int operator==(const abc::IUnitOfMeasurement &other);
+            int operator!=(const abc::IUnitOfMeasurement &other);
+            int operator<(const abc::IUnitOfMeasurement &other);
+            int operator>(const abc::IUnitOfMeasurement &other);
+            int operator<=(const abc::IUnitOfMeasurement &other);
+            int operator>=(const abc::IUnitOfMeasurement &other);
+        };
+    }
 }
 #endif

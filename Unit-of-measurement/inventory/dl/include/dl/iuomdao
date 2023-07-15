@@ -1,33 +1,33 @@
 #ifndef __$__iuomdao__
 #define __$__iuomdao__ 1234
-#include<iostream>
-#include<dl/iuom>
-#include<dl/uom>
-#include<dl/daoexception>
-#include<forward_list>
+#include <iostream>
+#include <dl/iuom>
+#include <dl/uom>
+#include <dl/daoexception>
+#include <forward_list>
 using namespace std;
 
 namespace inventory
 {
-namespace data_layer
-{
-namespace abc
-{
-class IUnitOfMeasurementDAO
-{
-public:
-static string FILE_NAME;
-virtual void add(IUnitOfMeasurement *unitOfMeasurement)=0;
-virtual void update(IUnitOfMeasurement *unitOfMeasurement)=0;
-virtual void remove(int code)=0;
-virtual IUnitOfMeasurement * getByCode(int code)=0;
-virtual IUnitOfMeasurement * getByTitle(string title)=0;
-virtual forward_list<IUnitOfMeasurement *> * getAll()=0;
-virtual int getCount()=0;
-virtual int codeExists(int code)=0;
-virtual int titleExists(string title)=0;
-};
-}
-}
+    namespace data_layer
+    {
+        namespace abc
+        {
+            class IUnitOfMeasurementDAO
+            {
+            public:
+                static string FILE_NAME;
+                virtual void add(IUnitOfMeasurement *unitOfMeasurement) = 0;
+                virtual void update(IUnitOfMeasurement *unitOfMeasurement) = 0;
+                virtual void remove(int code) = 0;
+                virtual IUnitOfMeasurement *getByCode(int code) = 0;
+                virtual IUnitOfMeasurement *getByTitle(string title) = 0;
+                virtual forward_list<IUnitOfMeasurement *> *getAll() = 0;
+                virtual int getCount() = 0;
+                virtual int codeExists(int code) = 0;
+                virtual int titleExists(string title) = 0;
+            };
+        }
+    }
 }
 #endif
